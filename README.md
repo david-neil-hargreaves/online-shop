@@ -101,7 +101,7 @@ The exact settings will vary by IDE.  These are applicable to Eclipse:
 |Item|Setting|
 |---|---|
 |Preferences --> Java --> Code Style --> Formatter|Import the eclipse-java-google-style.xml file supplied in the project.  This uses Google coding standards so that when the Format button is used code will be formatted in alignment with the Checkstyle configuration for the project.|
-|Preferences --> Java --> Code Style --> Organize Imports|Define the order to match that used by the Checkstyle configuration i.e. com, java, javax, org.|
+|Preferences --> Java --> Code Style --> Organize Imports|Remove any explicit ordering of packages.  This will then sort the imports alphabetically, matching the order used by the Checkstyle configuration.|
 |Preferences --> Java --> Compiler --> Compiler compliance level|1.8|
 |Preferences --> Java --> Installed JREs|Ensure that the JRE 1.8 is added and checked as the default.|
 
