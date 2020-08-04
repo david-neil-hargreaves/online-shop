@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -16,30 +17,40 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<!-- Jacoco, unit test coverage check. -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jdk.version>1.8</jdk.version>
+		<java.version>1.8</java.version>
+		<online.shop.utilities.version>0.0.1-SNAPSHOT</online.shop.utilities.version>
+		<online.shop.model.version>0.0.1-SNAPSHOT</online.shop.model.version>
+		<online.shop.services.version>0.0.1-SNAPSHOT</online.shop.services.version>
 		<jacoco.maven.plugin.version>0.8.1</jacoco.maven.plugin.version>
 		<jacoco.coverage.ratio>1.00</jacoco.coverage.ratio>
 	</properties>
 
 	<dependencies>
 
+
 		<dependency>
 			<groupId>sainsburys</groupId>
 			<artifactId>online-shop-utilities</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${online.shop.utilities.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>sainsburys</groupId>
 			<artifactId>online-shop-model</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${online.shop.model.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>sainsburys</groupId>
 			<artifactId>online-shop-services</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${online.shop.services.version}</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,25 +73,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<scope>test</scope>
 		</dependency>
 
 	</dependencies>

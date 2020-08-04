@@ -10,12 +10,16 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<!-- Testing -->
+		<online.shop.utilities.version>0.0.1-SNAPSHOT</online.shop.utilities.version>
+		<online.shop.model.version>0.0.1-SNAPSHOT</online.shop.model.version>
+		<online.shop.services.version>0.0.1-SNAPSHOT</online.shop.services.version>
+		<online.shop.application.version>0.0.1-SNAPSHOT</online.shop.application.version>
+		<spring.boot.version>2.2.0.RELEASE</spring.boot.version>
+		<lombok.version>1.18.12</lombok.version>
+		<jackson.version>2.11.0</jackson.version>
+		<jsoup.version>1.13.1</jsoup.version>
+		<apache.commons.version>3.10</apache.commons.version>
 		<maven-surefire-plugin-version>2.22.2</maven-surefire-plugin-version>
-		<!-- Automated code review tools -->
-		<!-- Checkstyle, code formatting check. -->
 		<maven.checkstyle.plugin.version>3.1.1</maven.checkstyle.plugin.version>
 		<maven.sevntu.checkstyle.plugin.version>1.27.0</maven.sevntu.checkstyle.plugin.version>
 		<maven.sevntu-checkstyle-check.checkstyle.version>8.32</maven.sevntu-checkstyle-check.checkstyle.version>
@@ -28,6 +32,108 @@
 		<module>online-shop-application</module>
 		<module>coverage</module>
 	</modules>
+
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<dependency>
+				<groupId>sainsburys</groupId>
+				<artifactId>online-shop-utilities</artifactId>
+				<version>${online.shop.utilities.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>sainsburys</groupId>
+				<artifactId>online-shop-model</artifactId>
+				<version>${online.shop.model.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>sainsburys</groupId>
+				<artifactId>online-shop-services</artifactId>
+				<version>${online.shop.services.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>sainsburys</groupId>
+				<artifactId>online-shop-application</artifactId>
+				<version>${online.shop.application.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring.boot.version}</version>
+				<exclusions>
+					<!-- Spring Boot uses Logback by default - this application is using 
+						Log4J. -->
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-log4j2</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>${jsoup.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${apache.commons.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring.boot.version}</version>
+				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.seleniumhq.selenium</groupId>
+						<artifactId>selenium-chrome-driver</artifactId>
+					</exclusion>
+					<!-- Spring Boot uses Logback by default - this application is using 
+						Log4J. -->
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
 
 	<build>
 
