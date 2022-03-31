@@ -14,7 +14,7 @@
 		<online.shop.model.version>0.0.1-SNAPSHOT</online.shop.model.version>
 		<online.shop.services.version>0.0.1-SNAPSHOT</online.shop.services.version>
 		<online.shop.application.version>0.0.1-SNAPSHOT</online.shop.application.version>
-		<spring.boot.version>2.2.0.RELEASE</spring.boot.version>
+		<spring.boot.version>2.5.12</spring.boot.version>
 		<lombok.version>1.18.12</lombok.version>
 		<jackson.version>2.11.0</jackson.version>
 		<jsoup.version>1.13.1</jsoup.version>
